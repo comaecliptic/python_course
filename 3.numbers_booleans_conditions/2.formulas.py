@@ -24,24 +24,24 @@ def harmonic_mean(*args):
 
 
 c = None
-while c != 0:
+while c != '0':
     print("Select formula. Type '1', '2' or '3'. Enter '0' to escape.")
     c = input()
     if c == '1':
         print('1. Calculating volume inside a sphere.\nEnter sphere radius:')
-        sr = int(input())
+        sr = float(input())
         print(f'Sphere volume: {sphere_volume(sr)}')
     elif c == '2':
         print("2. Calculate force of viscosity using Stokes' law.\nEnter dynamic viscosity:")
-        dv = int(input())
+        dv = float(input())
         print('Enter object radius:')
-        r = int(input())
+        r = float(input())
         print('Enter flow viscosity:')
-        fv = int(input())
+        fv = float(input())
         print(f'Frictional force: {stokes_law(dv, r, fv)}')
     elif c == '3':
         print('3. Calculate harmonic mean of a set of observations.\nEnter observations values, separated by spaces:')
-        a = [int(x) for x in input().split()]
+        a = [float(x) for x in input().split()]
         print(harmonic_mean(*a))
     elif c == '0':
         print('Goodbye, cruel world.')
