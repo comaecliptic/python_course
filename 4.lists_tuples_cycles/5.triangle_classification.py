@@ -10,6 +10,9 @@ while True:
     if len(triangle_sides) != 3:
         print('There must be exactly three sides!', end='\n\n')
         continue
+    elif sum(triangle_sides) - max(triangle_sides) <= max(triangle_sides):
+        print('Follow the Triangle Rule!', end='\n\n')
+        continue
     triangle_sides_set = set(triangle_sides)
     if len(triangle_sides_set) == 1:
         print('This triangle is equilateral.', end='\n\n')
