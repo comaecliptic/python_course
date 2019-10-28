@@ -32,4 +32,4 @@ print('\n')
 
 # third method
 for group, vocalist in zip(groups_vocalists.keys(), groups_vocalists.values()):
-    print(f'{group}: {groups_vocalists[group]}')
+    print(f'{group}: {vocalist}')

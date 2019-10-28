@@ -5,7 +5,7 @@ while True:
             print('First symbol is digit.')
         elif string[0].isalpha():
             print('First symbol is alphabetic.')
-        elif string[0] == ' ':
+        elif string[0].isspace():
             print('First symbol is space.')
         else:
             print('First symbol can not be classified.')

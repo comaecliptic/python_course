@@ -6,7 +6,7 @@ while True:
         else:
             print('The string begins with lowercase letter.')
         print(f'The string is {len(string)} characters long.')
-        if string[-2:-1] == '!!':
+        if string.endswith('!!'):
             print('The string is exclamation.')
         print(f'The string "fire" is {string.count("fire")} times in string.')
         print(string.upper())
