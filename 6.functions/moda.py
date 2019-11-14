@@ -17,8 +17,9 @@ def moda(number_list):
     values_counter = Counter(number_list)
     mode_value = []
     count = 0
+    max_value = maximum(values_counter.values())
     for key, value in values_counter.items():
-        if value == maximum(values_counter.values()):
+        if value == max_value:
             mode_value.append(key)
             count += 1
     if count > 1:
