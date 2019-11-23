@@ -16,7 +16,7 @@ def binary_search(number, sorted_list):
         Index of desired element in list.
     """
     length = len(sorted_list)
-    middle_idx = int(length / 2)
+    middle_idx = length // 2
     if sorted_list[middle_idx] == number:
         return middle_idx
     elif length == 1:

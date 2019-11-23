@@ -1,7 +1,7 @@
 squares = [i ** 2 for i in range(11)]
 print(squares)
 
-sums = [a + b for a, b in zip(range(4), range(5, 9))]
+sums = [a + b for a in range(4) for b in range(5, 9)]
 print(sums)
 
 nucleotide_dict = {
