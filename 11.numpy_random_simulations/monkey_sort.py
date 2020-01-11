@@ -28,10 +28,6 @@ def monkey_sort(list_of_numbers):
     Parameters
     ----------
     list_of_numbers : list of int or float
-
-    Returns
-    -------
-    sorted_list : list of int or float
     """
     while not is_sorted(list_of_numbers):
         np.random.shuffle(list_of_numbers)
@@ -60,5 +56,5 @@ if __name__ == '__main__':
     plt.errorbar(all_sizes, mean_time_of_sort, std_of_sort)
     plt.title('Performance of monkey sort by list size')
     plt.xlabel('Length of the list')
-    plt.ylabel(f'Time needed (mean of {number_of_runs} runs')
+    plt.ylabel(f'Time needed mean of {number_of_runs} runs')
     plt.show()

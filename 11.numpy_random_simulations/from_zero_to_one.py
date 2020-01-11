@@ -16,7 +16,7 @@ while amount_of_numbers <= max_amount:
         number=100000,
     )
     numpy_time = timeit.timeit(
-        stmt='[np.random.random() for _ in range(amount_of_numbers)]',
+        stmt='np.random.random(amount_of_numbers).tolist()',
         setup='import numpy as np',
         globals=globals(),
         number=100000,
