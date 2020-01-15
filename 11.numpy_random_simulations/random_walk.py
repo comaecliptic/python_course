@@ -7,7 +7,7 @@ def random_walk(start_point):
 
     Parameters
     ----------
-    start_point : tuple of int
+    start_point : np.array of int
         x and y coordinates of starting point.
 
     Returns
@@ -16,18 +16,18 @@ def random_walk(start_point):
         x and y coordinates of new point.
     """
     directions = {
-        1: (0, 1),    # up
-        2: (0, -1),   # down
-        3: (-1, 0),   # left
-        4: (1, 0)     # right
+        1: np.array((0, 1)),    # up
+        2: np.array((0, -1)),   # down
+        3: np.array((-1, 0)),   # left
+        4: np.array((1, 0))     # right
     }
     step = np.random.choice(list(directions.keys()))
-    new_point = np.array(start_point) + np.array(directions[step])
+    new_point = start_point + directions[step]
     return new_point
 
 
 if __name__ == '__main__':
-    start_point = (0, 0)
+    start_point = np.array((0, 0))
     step_number = int(input('Enter number of steps: '))
     all_points = [start_point]
     for _ in range(step_number):
