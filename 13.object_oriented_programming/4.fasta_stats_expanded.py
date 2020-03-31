@@ -72,7 +72,12 @@ class FastaStats:
             for k in range(len(record.seq) - 4):
                 kmer = record.seq[k:k+4]
                 kmer_numbers[kmer] += 1
-        plt.hist(kmer_numbers.values())
+        print(f'Kmers counted: {len(kmer_numbers)}')
+        plt.bar(
+            x=range(len(kmer_numbers)),
+            height=kmer_numbers.values(),
+            tick_label=kmer_numbers.keys()
+        )
         plt.xlabel('k-mer counts')
         plt.ylabel('Frequency')
         plt.title('K-mer distribution')
