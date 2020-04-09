@@ -5,19 +5,21 @@ import matplotlib.pyplot as plt
 
 
 with open('2430AD.txt') as f:
-    number_pattern = re.compile(r'\d+\.?\d*')
+    number_pattern = re.compile(r'\d+(\.\d+)?')
     a_pattern = re.compile(r'\b\w*[Aa]\w*\b')
-    exclamatory_pattern = re.compile(r'\b[A-Z][\w ,\']*!')
+    exclamatory_pattern = re.compile(r'\b[A-Z][\w ,:;%\(\)\-\"\']*!')
     unique_pattern = re.compile(r'\b\w+\b')
     number_matches = []
     a_matches = []
     exclamatory_matches = []
+    unique_words = set()
     unique_lengths = Counter()
     for line in f:
-        numbers = re.findall(number_pattern, line)
+        numbers = [n.group(0) for n in re.finditer(number_pattern, line)]
         a = re.findall(a_pattern, line)
         exclamatory = re.findall(exclamatory_pattern, line)
-        unique_words = re.findall(unique_pattern, line)
+        unique_words_in_line = re.findall(unique_pattern, line)
+        unique_words.update(unique_words_in_line)
         if numbers:
             number_matches.extend(numbers)
         if a:
